@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.get('*', (req, res) => 
 {
-  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
+  res.sendFile(path.join(__dirname, 'frontend', 'src', 'pages', 'LoginPage.js'))
 });
 
 app.post('/api/jwtTest', async(req, res, next) =>{
