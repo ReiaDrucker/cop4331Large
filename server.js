@@ -8,6 +8,8 @@ const mail = require('./email');
 
 const password = 'shhhhh';
 
+const base_url = 'https://cop4331-g25.herokuapp.com/';
+
 
 
 
