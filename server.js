@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const account = require('./accounts');
 const mail = require('./email');
 const path = require('path');
-const frontend = require('./frontend/src/pages/loginPage');
 const password = 'shhhhh';
 
 const base_url = 'https://cop4331-g25.herokuapp.com/';
@@ -21,8 +20,7 @@ app.use(express.static(path.join(__dirname, 'frontend', 'src','pages')));
 
 app.get('*', (req, res) => 
 {
-//   res.sendFile(path.join(__dirname, 'frontend', 'src', 'pages', 'LoginPage.js'))
-	frontend.LoginPage();
+  res.sendFile(path.join(__dirname, 'frontend', 'src', 'pages', 'LoginPage.js'))
 });
 
 app.post('/api/jwtTest', async(req, res, next) =>{
