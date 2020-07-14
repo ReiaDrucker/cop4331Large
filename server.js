@@ -17,6 +17,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('*', (req, res) => 
+{
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
+});
 
 app.post('/api/jwtTest', async(req, res, next) =>{
 	// const {userName, Password} = req.body;
