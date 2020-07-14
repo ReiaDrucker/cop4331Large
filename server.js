@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const jwt = require('jsonwebtoken');
 const account = require('./accounts');
 const mail = require('./email');
-
+const path = require('path');
 const password = 'shhhhh';
 
 const base_url = 'https://cop4331-g25.herokuapp.com/';
