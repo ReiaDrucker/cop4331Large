@@ -257,7 +257,7 @@ app.use((req, res, next) => {
   next();
 });
 
-var port = 5000;
+var port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log("Server running on port " + port);
 }); // start Node + Express server on port 5000
