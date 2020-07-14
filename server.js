@@ -10,12 +10,13 @@ const password = 'shhhhh';
 
 const base_url = 'https://cop4331-g25.herokuapp.com/';
 
-
-
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(path.join(__dirname, 'frontend', 'src','pages')));
 
 app.get('*', (req, res) => 
 {
