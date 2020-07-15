@@ -335,6 +335,13 @@ html
     display: none;
 }
 
+#ProfilePanel
+{
+    display: none;
+    align-content: center;
+    text-align: center;
+}
+
 #resAppLabel
 {
     margin-right: 35%;
@@ -545,6 +552,19 @@ body
 	font-size: 30px;
 	color: black;
 }
+
+#loginNameUpdate
+{
+    font-size: 30px;
+	color: black;
+}
+
+#loginPasswordUpdate
+{
+    font-size: 30px;
+	color: black;
+}
+
 #loginPassword
 {
 	font-size: 30px;
