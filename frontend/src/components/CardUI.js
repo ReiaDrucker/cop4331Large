@@ -28,7 +28,7 @@ function CardUI()
 
         try
         {
-            const response = await fetch(BASE_URL + '/api/addcard',
+            const response = await fetch(BASE_URL + 'api/addcard',
             {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var txt = await response.text();
@@ -58,7 +58,7 @@ function CardUI()
 
         try
         {
-            const response = await fetch(BASE_URL + '/api/searchcards',
+            const response = await fetch(BASE_URL + 'api/searchcards',
             {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var txt = await response.text();

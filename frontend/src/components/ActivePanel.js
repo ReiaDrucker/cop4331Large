@@ -42,7 +42,7 @@ function ActivePanel() {
             var tokenJSON = '{"token":"' + token + '"}';
 
             // build and send JSON
-            let response = await fetch(BASE_URL + '/api/listTripsByAdmin',
+            let response = await fetch(BASE_URL + 'api/listTripsByAdmin',
                 { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
             res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -73,7 +73,7 @@ function ActivePanel() {
                     var tokenJSON = '{"token":"' + token + '"}';
 
                     // build and send JSON
-                    let response = await fetch(BASE_URL + '/api/getById',
+                    let response = await fetch(BASE_URL + 'api/getById',
                         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
                     res2 = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -154,7 +154,7 @@ function ActivePanel() {
             var tokenJSON = '{"token":"' + token + '"}';
 
             // build and send JSON
-            let response = await fetch(BASE_URL + '/api/listTripsByAdmin',
+            let response = await fetch(BASE_URL + 'api/listTripsByAdmin',
                 { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
             res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -186,7 +186,7 @@ function ActivePanel() {
                     var tokenJSON = '{"token":"' + token + '"}';
 
                     // build and send JSON
-                    let response = await fetch(BASE_URL + '/api/getById',
+                    let response = await fetch(BASE_URL + 'api/getById',
                         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
                     res2 = jwt.verify(JSON.parse(await response.text()).token, ePassword);
