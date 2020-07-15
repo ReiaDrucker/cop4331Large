@@ -30,7 +30,7 @@ html
     display: grid;
     grid-gap: 8%;
     margin: auto;
-    grid-template-columns: repeat(5, [col-start] 12% [col-end]);
+    grid-template-columns: repeat(4, [col-start] 12% [col-end]);
     width: 100%;
     margin-left: 5%;
 }
@@ -117,7 +117,7 @@ html
     font-size: 30px;
     border-radius: 25px;
 }
-#searchFinText
+/* #searchFinText
 {
 	float: left;
 	width: 60%;
@@ -125,7 +125,7 @@ html
 	height: 50px;
     font-size: 30px;
     border-radius: 25px;
-}
+} */
 #searchAllText
 {
 	float: left;
@@ -198,7 +198,7 @@ html
     font-size: 24px;
 }
 
-#searchFinButton{
+/* #searchFinButton{
 	float: right;
 	min-width: 20px;
 	width: 10%;
@@ -207,7 +207,7 @@ html
 	margin-right: 15%;
     text-align: center;
     font-size: 24px;
-}
+} */
 
 #searchDenButton{
 	float: right;
@@ -247,13 +247,13 @@ html
     margin-bottom: 0;
 }
 
-#FinTripList{
+/* #FinTripList{
     width: 100%;
     max-height: 60vh;
     overflow: auto;
     padding-bottom: 0;
     margin-bottom: 0;
-}
+} */
 
 #DenTripList{
     width: 100%;
@@ -285,12 +285,12 @@ html
     overflow: auto;
 }
 
-#FinTripListDiv{
+/* #FinTripListDiv{
     width: 80%;
     height: 100%;
     margin-left: 10%;
     overflow: auto;
-}
+} */
 
 #DenTripListDiv{
     width: 80%;
@@ -315,10 +315,10 @@ html
     display: none;
 }
 
-#FinishedPanel
+/* #FinishedPanel
 {
     display: none;
-}
+} */
 
 #DeniedPanel
 {

@@ -187,32 +187,32 @@ function AllPanel() {
                     contentDiv.appendChild(reasonP);
                 }
 
-                // FINISHED
-                if (isApproved === true && isNew === false) {
-                    // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
-                    collButton.innerHTML = "COMPLETE: " + uID + "'s Trip to " + loc2;
-                    collButton.id = ID + "-coll";
-                    collButton.className = "collapsible";
+                // // FINISHED
+                // if (isApproved === true && isNew === false) {
+                //     // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
+                //     collButton.innerHTML = "COMPLETE: " + uID + "'s Trip to " + loc2;
+                //     collButton.id = ID + "-coll";
+                //     collButton.className = "collapsible";
 
-                    // make new div for the content, and give it an ID that corresponds to the trip request ID in the database ("#")
-                    contentDiv.id = "" + ID;
-                    contentDiv.className = "content";
+                //     // make new div for the content, and give it an ID that corresponds to the trip request ID in the database ("#")
+                //     contentDiv.id = "" + ID;
+                //     contentDiv.className = "content";
 
-                    // create the <p> for the content div
-                    var departTimeP = document.createElement("p");
-                    var arrivalTimeP = document.createElement("p");
-                    var reasonP = document.createElement("p");
+                //     // create the <p> for the content div
+                //     var departTimeP = document.createElement("p");
+                //     var arrivalTimeP = document.createElement("p");
+                //     var reasonP = document.createElement("p");
 
-                    // fill <p>s with content from json
-                    departTimeP.innerHTML = "Depart Time: " + departTime;
-                    arrivalTimeP.innerHTML = "Arrival Time: " + arrivalTime;
-                    reasonP.innerHTML = "Reason For Trip: " + reason;
+                //     // fill <p>s with content from json
+                //     departTimeP.innerHTML = "Depart Time: " + departTime;
+                //     arrivalTimeP.innerHTML = "Arrival Time: " + arrivalTime;
+                //     reasonP.innerHTML = "Reason For Trip: " + reason;
 
-                    // add the <p>s to the content div
-                    contentDiv.appendChild(departTimeP);
-                    contentDiv.appendChild(arrivalTimeP);
-                    contentDiv.appendChild(reasonP);
-                }
+                //     // add the <p>s to the content div
+                //     contentDiv.appendChild(departTimeP);
+                //     contentDiv.appendChild(arrivalTimeP);
+                //     contentDiv.appendChild(reasonP);
+                // }
 
                 // DENIED
                 if (isApproved === false && isNew === false) {
@@ -423,32 +423,32 @@ function AllPanel() {
                     contentDiv.appendChild(reasonP);
                 }
 
-                // FINISHED
-                if (isApproved === true && isNew === false) {
-                    // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
-                    collButton.innerHTML = "COMPLETE: " + uID + "'s Trip to " + loc2;
-                    collButton.id = ID + "-coll";
-                    collButton.className = "collapsible";
+                // // FINISHED
+                // if (isApproved === true && isNew === false) {
+                //     // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
+                //     collButton.innerHTML = "COMPLETE: " + uID + "'s Trip to " + loc2;
+                //     collButton.id = ID + "-coll";
+                //     collButton.className = "collapsible";
 
-                    // make new div for the content, and give it an ID that corresponds to the trip request ID in the database ("#")
-                    contentDiv.id = "" + ID;
-                    contentDiv.className = "content";
+                //     // make new div for the content, and give it an ID that corresponds to the trip request ID in the database ("#")
+                //     contentDiv.id = "" + ID;
+                //     contentDiv.className = "content";
 
-                    // create the <p> for the content div
-                    var departTimeP = document.createElement("p");
-                    var arrivalTimeP = document.createElement("p");
-                    var reasonP = document.createElement("p");
+                //     // create the <p> for the content div
+                //     var departTimeP = document.createElement("p");
+                //     var arrivalTimeP = document.createElement("p");
+                //     var reasonP = document.createElement("p");
 
-                    // fill <p>s with content from json
-                    departTimeP.innerHTML = "Depart Time: " + departTime;
-                    arrivalTimeP.innerHTML = "Arrival Time: " + arrivalTime;
-                    reasonP.innerHTML = "Reason For Trip: " + reason;
+                //     // fill <p>s with content from json
+                //     departTimeP.innerHTML = "Depart Time: " + departTime;
+                //     arrivalTimeP.innerHTML = "Arrival Time: " + arrivalTime;
+                //     reasonP.innerHTML = "Reason For Trip: " + reason;
 
-                    // add the <p>s to the content div
-                    contentDiv.appendChild(departTimeP);
-                    contentDiv.appendChild(arrivalTimeP);
-                    contentDiv.appendChild(reasonP);
-                }
+                //     // add the <p>s to the content div
+                //     contentDiv.appendChild(departTimeP);
+                //     contentDiv.appendChild(arrivalTimeP);
+                //     contentDiv.appendChild(reasonP);
+                // }
 
                 // DENIED
                 if (isApproved === false && isNew === false) {
