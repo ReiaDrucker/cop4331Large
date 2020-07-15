@@ -30,7 +30,7 @@ html
     display: grid;
     grid-gap: 8%;
     margin: auto;
-    grid-template-columns: repeat(4, [col-start] 12% [col-end]);
+    grid-template-columns: repeat(4, [col-start] 20% [col-end]);
     width: 100%;
     margin-left: 5%;
 }
