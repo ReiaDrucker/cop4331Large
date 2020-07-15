@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 var jwt = require('jsonwebtoken');
 
-const BASE_URL = 'http://localhost:5000/';
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
 
 function Signup() {
 

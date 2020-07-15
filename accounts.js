@@ -5,6 +5,8 @@ const sgMail = require("@sendgrid/mail");
 require('dotenv').config();
 const mail = require('./email');
 
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
+
 // const url = 'mongodb+srv://RickLeinecker:COP4331Rocks@cluster0-4pisv.mongodb.net/COP4331?retryWrites=true&w=majority';
 
 db.setUrl(url);
@@ -71,7 +73,7 @@ const register = async(res, table, user, pass, first, last, email, admin=0) =>
 		results.error = error;
 	}
 	
-	var text = 'https://cop4331lpserver.michaelrogatin1.repl.co/api/Verify?userName='+user+'&Password='+pass;
+	var text = BASE_URL + '/api/Verify?userName='+user+'&Password='+pass;
 
 	mail.send(res, email, 'Hello', 'this is a verification email. go to this link: ' + text);
 	

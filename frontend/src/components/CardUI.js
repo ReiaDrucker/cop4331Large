@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
 // admin is generally referred to as user (ex: user_data) and I'll be calling the users the admin oversees clients
 
 function CardUI()
@@ -27,7 +28,7 @@ function CardUI()
 
         try
         {
-            const response = await fetch('http://localhost:5000/api/addcard',
+            const response = await fetch(BASE_URL + '/api/addcard',
             {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var txt = await response.text();
@@ -57,7 +58,7 @@ function CardUI()
 
         try
         {
-            const response = await fetch('http://localhost:5000/api/searchcards',
+            const response = await fetch(BASE_URL + '/api/searchcards',
             {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var txt = await response.text();

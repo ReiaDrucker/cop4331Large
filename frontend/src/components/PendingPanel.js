@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useEffectAsync from '../components/useEffectAsync';
 var jwt = require('jsonwebtoken');
 
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
 // admin is generally referred to as user (ex: user_data) and I'll be calling the users the admin oversees clients
 
 function PendingPanel() {
@@ -43,7 +44,7 @@ function PendingPanel() {
             var tokenJSON = '{"token":"' + token + '"}';
 
             // build and send JSON
-            let response = await fetch('http://localhost:5000/api/listTripsByAdmin',
+            let response = await fetch(BASE_URL + '/api/listTripsByAdmin',
                 { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
             res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -75,7 +76,7 @@ function PendingPanel() {
                     var tokenJSON = '{"token":"' + token + '"}';
 
                     // build and send JSON
-                    let response = await fetch('http://localhost:5000/api/getById',
+                    let response = await fetch(BASE_URL + '/api/getById',
                         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
                     res2 = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -186,7 +187,7 @@ function PendingPanel() {
             var tokenJSON = '{"token":"' + token + '"}';
 
             // build and send JSON
-            let response = await fetch('http://localhost:5000/api/listTripsByAdmin',
+            let response = await fetch(BASE_URL + '/api/listTripsByAdmin',
                 { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
             res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
@@ -218,7 +219,7 @@ function PendingPanel() {
                     var tokenJSON = '{"token":"' + token + '"}';
 
                     // build and send JSON
-                    let response = await fetch('http://localhost:5000/api/getById',
+                    let response = await fetch(BASE_URL + '/api/getById',
                         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
                     res2 = jwt.verify(JSON.parse(await response.text()).token, ePassword);
