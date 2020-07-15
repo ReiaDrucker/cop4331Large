@@ -8,7 +8,7 @@ const mail = require('./email');
 const path = require('path');
 const password = 'shhhhh';
 
-const base_url = 'https://cop4331-g25.herokuapp.com/';
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
 
 const app = express();
 app.use(cors());

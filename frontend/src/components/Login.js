@@ -2,16 +2,7 @@
 import React, { useState } from 'react';
 var jwt = require('jsonwebtoken');
 
-const BASE_URL = 'http://localhost:5000/';
-
-if( process.env.NODE_ENV == 'production')
-{
-  BASE_URL = 'https://cop4331-g25.herokuapp.com/';
-}
-
-
-
-
+const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
 
 function Login() {
 
