@@ -73,7 +73,7 @@ const register = async(res, table, user, pass, first, last, email, admin=0) =>
 		results.error = error;
 	}
 	
-	var text = BASE_URL + '/api/Verify?userName='+user+'&Password='+pass;
+	var text = BASE_URL + 'api/Verify?userName='+user+'&Password='+pass;
 
 	mail.send(res, email, 'Hello', 'this is a verification email. go to this link: ' + text);
 	
