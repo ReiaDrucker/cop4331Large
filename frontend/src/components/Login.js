@@ -39,14 +39,14 @@ function Login() {
       }
       else {
 
-        if (res.isVerified === false){
+        if (res.isVerified === false) {
           setMessage('Please check you email to verify your account');
         }
 
-        else{
+        else {
           var user = { firstName: res.firstName, lastName: res.lastName, id: res.id, userName: loginName.value }
           localStorage.setItem('user_data', JSON.stringify(user));
-  
+
           setMessage('');
           window.location.href = '/cards';
         }
@@ -57,35 +57,6 @@ function Login() {
       return;
     }
 
-    // // START TEST DEBUG
-    // try {
-
-    //   var js2 = '{"userName":"'
-    //     + loginName.value
-    //     + '","Password":"'
-    //     + loginPassword.value + '"}';
-
-
-    //   var token = jwt.sign(js2, 'shhhhh');
-
-    //   var tokenJSON = '{"token":"' + token + '"}';
-
-    //   document.getElementById("inner-title").innerHTML = tokenJSON;
-
-    //   const responseTEST = await fetch(BASE_URL + 'api/jwtTest',
-    //     { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
-
-    //     var res2 = JSON.parse(await responseTEST.text());
-    //   alert(res2.Password);
-
-
-    // }
-    // catch (e) {
-    //   alert(e.toString());
-    //   return;
-    // }
-    // // END TEST DEBUG
-
   }
 
   // swap to signup
@@ -94,6 +65,16 @@ function Login() {
 
     document.getElementById("loginDiv").style.display = "none";
     document.getElementById("signupDiv").style.display = "block";
+    document.getElementById("ForgotDiv").style.display = "none";
+  }
+
+  // swap to forgot password page
+  const gotoForgot = event => {
+    event.preventDefault();
+
+    document.getElementById("loginDiv").style.display = "none";
+    document.getElementById("signupDiv").style.display = "none";
+    document.getElementById("ForgotDiv").style.display = "block";
   }
 
 
@@ -104,7 +85,8 @@ function Login() {
         <input type="text" id="loginName" placeholder="Username" ref={(c) => loginName = c} /><br />
         <input type="password" id="loginPassword" placeholder="Password" ref={(c) => loginPassword = c} /><br />
         <button type="button" id="loginButton" class="buttons" onClick={doLogin}> Login </button> <br />
-        <button type="button" id="switchToSignup" class="buttons" onClick={gotoSignup}>Make Account</button>
+        <button type="button" id="switchToSignup" class="buttons" onClick={gotoSignup}>Make Account</button> <br />
+        <button type="button" id="switchToForgot" class="buttons" onClick={gotoForgot}>Forgot My Password</button>
 
       </form>
       <span id="loginResult">{message}</span>
