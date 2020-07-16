@@ -29,6 +29,7 @@ function LoggedInName()
       document.getElementById("AllPanel").style.display = "none";
       document.getElementById("RespondPanel").style.display = "none";
       document.getElementById("NavBarHolder").style.display = "none";
+      document.getElementById("subTitle").style.display = "none";
 
       // goto profile panel
       document.getElementById("ProfilePanel").style.display = "block";

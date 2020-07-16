@@ -71,12 +71,13 @@ function ProfilePanel() {
         // TODO - REMEMBER TO UPDATE user_data AFTER PROFILE EDIT!!!!!!
 
         // Return to original page on completion
+        document.getElementById("NavBarHolder").style.display = "block";
+        document.getElementById("subTitle").style.display = "block";
         document.getElementById("PendingPanel").style.display = "block";
         document.getElementById("ActivePanel").style.display = "none";
         document.getElementById("DeniedPanel").style.display = "none";
         document.getElementById("AllPanel").style.display = "none";
         document.getElementById("RespondPanel").style.display = "none";
-        document.getElementById("NavBarHolder").style.display = "block";
 
         // hide profile panel
         document.getElementById("ProfilePanel").style.display = "none";
