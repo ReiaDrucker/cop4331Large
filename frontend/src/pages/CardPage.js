@@ -9,6 +9,7 @@ import ActivePanel from '../components/ActivePanel';
 import DeniedPanel from '../components/DeniedPanel';
 import AllPanel from '../components/AllPanel';
 import RespondPanel from '../components/RespondPanel';
+import ProfilePanel from '../components/ProfilePanel.js';
 
 const CardPage = () =>
 {
@@ -23,6 +24,7 @@ const CardPage = () =>
             <DeniedPanel />
             <AllPanel />
             <RespondPanel />
+            <ProfilePanel />
         </div>
     );
 }
