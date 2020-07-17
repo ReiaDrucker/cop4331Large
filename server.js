@@ -185,9 +185,10 @@ app.post('/api/listAdmins', async(req, res, next) =>{
 // to verify there account. 
 // it can also be called form an html button embedded in an email
 app.get('/api/Verify', async(req, res, next) =>{
-	var userName = require('url').parse(req.url,true).query.userName;
-	var Password = require('url').parse(req.url,true).query.Password;
-	account.verify(res, userName, Password);
+	// var userName = require('url').parse(req.url,true).query.userName;
+	// var Password = require('url').parse(req.url,true).query.Password;
+	var Id = require('url').parse(req.url,true).query.Id;
+	account.verify(res, Id);
 	
 });
 
