@@ -72,10 +72,14 @@ const register = async(res, table, user, pass, first, last, email, admin=0) =>
 	{
 		results.error = error;
 	}
+
+	var User = await db.find(table, json);
 	
-	var text = BASE_URL + 'api/Verify?userName='+user+'&Password='+pass;
+// 	var text = BASE_URL + 'api/Verify?userName='+user+'&Password='+pass;
+	var text = BASE_URL + 'api/Verify?Id=' + User.Results[0]._id;
 
 	mail.send(res, email, 'Hello', 'this is a verification email. go to this link: ' + text);
+	
 	
 	db.sendjson(res, results);
 	
@@ -217,9 +221,9 @@ const listAdmins = async(res) =>
 	db.sendjson(res, admins);
 };
 
-const verify = async(res, userName, Password) =>
+const verify = async(res, Id) =>
 {
-	var login = {userName: userName, Password: Password};
+	var login = {_id: id.ObjectId(Id)};
 	var change = {isVerified: true};
 	var result = await db.update('Users', login, change);
 	var result = await db.update('Admins', login, change);
