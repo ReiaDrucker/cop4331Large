@@ -30,6 +30,7 @@ const login = async(res, table, user, pass) =>
 
 const register = async(res, table, user, pass, first, last, email, admin=0) =>
 {
+	
 	var error = '';
 	var json = {
 		isVerified: false,
