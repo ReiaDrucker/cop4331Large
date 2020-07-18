@@ -227,7 +227,8 @@ const verify = async(res, Id) =>
 	var change = {isVerified: true};
 	var result = await db.update('Users', login, change);
 	var result = await db.update('Admins', login, change);
-	db.sendjson(res, {Results: 'Account Verified!',error:''});
+// 	db.sendjson(res, {Results: 'Account Verified!',error:''});
+	res.redirect('https://cop4331-g25.herokuapp.com/');
 };
 
 const editTrip = async(res, _id, newData)=>
