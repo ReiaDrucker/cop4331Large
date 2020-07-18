@@ -19,12 +19,12 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-/*
-app.get('*', (req, res) => 
+
+app.get('/cards', (req, res) => 
 {
   res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
 });
-*/
+
 
 app.post('/api/jwtTest', async(req, res, next) =>{
 	// const {userName, Password} = req.body;
