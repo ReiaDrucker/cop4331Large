@@ -192,6 +192,7 @@ app.get('/api/Verify', async(req, res, next) =>{
 	// var Password = require('url').parse(req.url,true).query.Password;
 	var Id = require('url').parse(req.url,true).query.Id;
 	account.verify(res, Id);
+	res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
 	
 });
 
