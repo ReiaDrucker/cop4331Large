@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const account = require('./accounts');
 const mail = require('./email');
 const path = require('path');
+const id = require('mongodb').ObjectId;
 const password = 'shhhhh';
 
 const BASE_URL = 'https://cop4331-g25.herokuapp.com/';
@@ -190,6 +191,48 @@ app.get('/api/Verify', async(req, res, next) =>{
 	var Id = require('url').parse(req.url,true).query.Id;
 	account.verify(res, Id);
 	
+});
+
+// {
+// 	"userName":"user1",
+// 	"Password":"pass"
+// }
+app.post('/api/sendResetPassword', async(req, res, next) =>{
+	// var userKey = require('url').parse(req.url,true).query.Key;
+	var decoded = jwt.verify(req.body.token, password);
+	var {userName, Password} = decoded;
+	var user = await account.db.find('Users', {userName:userName});
+	var admin = await account.db.find('Admins', {userName:userName});
+	var id;
+	var to;
+	if(user.Results.length > 0)
+	{
+		id = user.Results[0]._id;
+		to = user.Results[0].email;
+	}
+	else
+	{
+		id = admin.Results[0]._id;
+		to = user.Results[0].email;
+	}
+	var key = jwt.sign({Password:Password}, password);
+	var text = "Password reset link:\n" + base_url + 'Reset?Id=' + id + '&Key=' + key;
+	mail.send(res, to, "Password Reset", text, "");
+	account.db.sendjson(res, {error:""});
+});
+
+
+app.get('/api/Reset', async(req, res, next) =>{
+	// var userName = require('url').parse(req.url,true).query.userName;
+	// var Password = require('url').parse(req.url,true).query.Password;
+	var Id = require('url').parse(req.url,true).query.Id;
+	var key = require('url').parse(req.url,true).query.Key;
+	var Key = jwt.verify(key, password).Password;
+	var login = {_id: id.ObjectId(Id)};
+	var change = {Password: Key};
+	var user = await account.db.update("Users", login, change);
+	var admin = await account.db.update("Admins", login, change);
+	account.db.sendjson(res, {Results: 'Password Changed!',error:''});
 });
 
 // {
