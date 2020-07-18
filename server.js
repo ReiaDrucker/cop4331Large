@@ -216,7 +216,7 @@ app.post('/api/sendResetPassword', async(req, res, next) =>{
 		to = user.Results[0].email;
 	}
 	var key = jwt.sign({Password:Password}, password);
-	var text = "Password reset link:\n" + base_url + 'Reset?Id=' + id + '&Key=' + key;
+	var text = "Password reset link:\n" + base_url + 'api/Reset?Id=' + id + '&Key=' + key;
 	mail.send(res, to, "Password Reset", text, "");
 	account.db.sendjson(res, {error:""});
 });
