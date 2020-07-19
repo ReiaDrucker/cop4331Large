@@ -80,8 +80,8 @@ function ForgotPW() {
       <form onSubmit={doForgotPW}>
         <span id="inner-title">Provide Your username and desired new password. You'll confirm your password change via your email.</span><br /><br />
         <input type="text" id="forgotUsername" placeholder="Username" ref={(c) => username = c} /><br />
-        <input type="text" id="forgotPW" placeholder="New Password" ref={(c) => password = c} /><br />
-        <input type="text" id="forgotPWConfirm" placeholder="Confirm New Password" ref={(c) => passwordConf = c} /><br />
+        <input type="password" id="forgotPW" placeholder="New Password" ref={(c) => password = c} /><br />
+        <input type="password" id="forgotPWConfirm" placeholder="Confirm New Password" ref={(c) => passwordConf = c} /><br />
         <button type="button" id="forgotRecover" class="buttons" onClick={doForgotPW}> Recover Password </button> <br />
         <button type="button" id="forgotToLogin" class="buttons" onClick={gotoLogin}>Return to Login</button> <br />
 
