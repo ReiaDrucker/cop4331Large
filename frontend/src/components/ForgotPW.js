@@ -47,19 +47,19 @@ function ForgotPW() {
         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
       // verify returned token
-      var res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
+      //var res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
 
-      if (res.error != "") {
-        setMessage(res.error);
-      }
-      else {
+      // if (res.error != "") {
+      //   setMessage(res.error);
+      // }
+      // else {
 
         document.getElementById("loginDiv").style.display = "block";
         document.getElementById("signupDiv").style.display = "none";
         document.getElementById("ForgotDiv").style.display = "none";
 
         document.getElementById('loginResult').innerHTML = "Email sent to verify new password, your password will not reset until you confirm via email.";
-      }
+      // }
     }
     catch (e) {
       alert(e.toString());
