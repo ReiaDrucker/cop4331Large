@@ -36,6 +36,8 @@ function ForgotPW() {
       + '","Password":"'
       + password.value + '"}';
 
+      alert(js);
+
     try {
       var token = jwt.sign(js, ePassword);
 
@@ -46,6 +48,8 @@ function ForgotPW() {
 
       // verify returned token
       var res = jwt.verify(JSON.parse(await response.text()).token, ePassword);
+
+      alert("res:" + res);
 
       if (res.error != "") {
         setMessage(res.error);
