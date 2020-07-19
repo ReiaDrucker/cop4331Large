@@ -41,6 +41,8 @@ function ForgotPW() {
 
       var tokenJSON = '{"token":"' + token + '"}';
 
+      alert(tokenJS);
+
       const response = await fetch(BASE_URL + 'api/sendResetPassword',
         { method: 'POST', body: tokenJSON, headers: { 'Content-Type': 'application/json' } });
 
