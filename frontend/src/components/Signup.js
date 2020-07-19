@@ -68,7 +68,7 @@ function Signup() {
         var user = { firstName: firstName.value, lastName: lastName.value, id: res.id, userName: adminId.value }
         localStorage.setItem('user_data', JSON.stringify(user));
 
-        alert('Account made, please check your email for verification');
+        document.getElementById('loginResult').innerHTML = "Account made, please check your email for verification";
         
         document.getElementById("loginDiv").style.display = "block";
         document.getElementById("signupDiv").style.display = "none";
