@@ -216,7 +216,7 @@ app.post('/api/sendResetPassword', async(req, res, next) =>{
 	else
 	{
 		id = admin.Results[0]._id;
-		to = user.Results[0].email;
+		to = admin.Results[0].email;
 	}
 	var key = jwt.sign({Password:Password}, password);
 	var text = "Password reset link:\n" + base_url + 'api/Reset?Id=' + id + '&Key=' + key;
