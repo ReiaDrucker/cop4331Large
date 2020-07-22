@@ -93,7 +93,7 @@ function ActivePanel() {
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
-                collButton.innerHTML = "ACTIVE: " + uID + "'s Trip to " + loc2;
+                collButton.innerHTML = "APPROVED: " + uID + "'s Trip to " + loc2;
                 collButton.id = ID + "-coll";
                 collButton.className = "collapsible";
 
@@ -211,7 +211,7 @@ function ActivePanel() {
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
-                collButton.innerHTML = "ACTIVE: " + uID + "'s Trip to " + loc2;
+                collButton.innerHTML = "APPROVED: " + uID + "'s Trip to " + loc2;
                 collButton.id = ID + "-coll";
                 collButton.className = "collapsible";
 
