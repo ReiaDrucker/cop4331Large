@@ -91,6 +91,8 @@ function DeniedPanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var reasonDen = res[i].comments;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
