@@ -89,6 +89,8 @@ function AllPanel() {
                 var weather = res[i].weather;
                 var reasonDen = res[i].comments;
                 var arrivalTime = res[i].endTime;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 var userIDNUM = res[i].userId;  // TODO - SHOULD BE TEMP
                 var adminIDNUM = res[i].adminId;  // TODO - SHOULD BE TEMP
@@ -118,18 +120,21 @@ function AllPanel() {
                     var weatherP = document.createElement("p");
                     var departTimeP = document.createElement("p");
                     var reasonP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     clientP.innerHTML = "Request From: " + uID;
                     weatherP.innerHTML = "Weather Conditions: " + weather;
                     departTimeP.innerHTML = "Depart Time: " + departTime;
                     reasonP.innerHTML = "Reason For Trip: " + reason;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(clientP);
                     contentDiv.appendChild(weatherP);
                     contentDiv.appendChild(departTimeP);
                     contentDiv.appendChild(reasonP);
+                    contentDiv.appendChild(reqTimeP);
 
                     // add respond button to get to deny / accept panel                
                     var resButton = document.createElement("button");
@@ -175,16 +180,19 @@ function AllPanel() {
                     var currentLocP = document.createElement("p");
                     var departTimeP = document.createElement("p");
                     var reasonP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     currentLocP.innerHTML = "Current Location: " + loc1;
                     departTimeP.innerHTML = "Depart Time: " + departTime;
                     reasonP.innerHTML = "Reason For Trip: " + reason;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(currentLocP);
                     contentDiv.appendChild(departTimeP);
                     contentDiv.appendChild(reasonP);
+                    contentDiv.appendChild(reqTimeP);
                 }
 
                 // // FINISHED
@@ -227,12 +235,15 @@ function AllPanel() {
 
                     // create the <p> for the content div
                     var reasonDenP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     reasonDenP.innerHTML = "Reason For Denial: " + reasonDen;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(reasonDenP);
+                    contentDiv.appendChild(reqTimeP);
                 }
 
                 // add collButton and contentDiv to TripList
@@ -325,6 +336,8 @@ function AllPanel() {
                 var weather = res[i].weather;
                 var reasonDen = res[i].comments;
                 var arrivalTime = res[i].endTime;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 var userIDNUM = res[i].userId;  // TODO - SHOULD BE TEMP
                 var adminIDNUM = res[i].adminId;  // TODO - SHOULD BE TEMP
@@ -354,18 +367,21 @@ function AllPanel() {
                     var weatherP = document.createElement("p");
                     var departTimeP = document.createElement("p");
                     var reasonP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     clientP.innerHTML = "Request From: " + uID;
                     weatherP.innerHTML = "Weather Conditions: " + weather;
                     departTimeP.innerHTML = "Depart Time: " + departTime;
                     reasonP.innerHTML = "Reason For Trip: " + reason;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(clientP);
                     contentDiv.appendChild(weatherP);
                     contentDiv.appendChild(departTimeP);
                     contentDiv.appendChild(reasonP);
+                    contentDiv.appendChild(reqTimeP);
 
                     // add respond button to get to deny / accept panel                
                     var resButton = document.createElement("button");
@@ -411,16 +427,19 @@ function AllPanel() {
                     var currentLocP = document.createElement("p");
                     var departTimeP = document.createElement("p");
                     var reasonP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     currentLocP.innerHTML = "Current Location: " + loc1;
                     departTimeP.innerHTML = "Depart Time: " + departTime;
                     reasonP.innerHTML = "Reason For Trip: " + reason;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(currentLocP);
                     contentDiv.appendChild(departTimeP);
                     contentDiv.appendChild(reasonP);
+                    contentDiv.appendChild(reqTimeP);
                 }
 
                 // // FINISHED
@@ -463,12 +482,15 @@ function AllPanel() {
 
                     // create the <p> for the content div
                     var reasonDenP = document.createElement("p");
+                    var reqTimeP = document.createElement("p");
 
                     // fill <p>s with content from json
                     reasonDenP.innerHTML = "Reason For Denial: " + reasonDen;
+                    reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                     // add the <p>s to the content div
                     contentDiv.appendChild(reasonDenP);
+                    contentDiv.appendChild(reqTimeP);
                 }
 
                 // add collButton and contentDiv to TripList

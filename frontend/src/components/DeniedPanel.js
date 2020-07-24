@@ -105,12 +105,15 @@ function DeniedPanel() {
 
                 // create the <p> for the content div
                 var reasonDenP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 reasonDenP.innerHTML = "Reason For Denial: " + reasonDen;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(reasonDenP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add collButton and contentDiv to TripList
                 document.getElementById("DenTripList").appendChild(collButton);
@@ -209,6 +212,8 @@ function DeniedPanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var reasonDen = res[i].comments;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
@@ -223,12 +228,15 @@ function DeniedPanel() {
 
                 // create the <p> for the content div
                 var reasonDenP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 reasonDenP.innerHTML = "Reason For Denial: " + reasonDen;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(reasonDenP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add collButton and contentDiv to TripList
                 document.getElementById("DenTripList").appendChild(collButton);

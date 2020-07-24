@@ -93,6 +93,8 @@ function PendingPanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 var userIDNUM = res[i].userId;  // TODO - SHOULD BE TEMP
                 var adminIDNUM = res[i].adminId;  // TODO - SHOULD BE TEMP
@@ -114,18 +116,21 @@ function PendingPanel() {
                 var weatherP = document.createElement("p");
                 var departTimeP = document.createElement("p");
                 var reasonP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 clientP.innerHTML = "Request From: " + uID;
                 weatherP.innerHTML = "Weather Conditions: " + weather;
                 departTimeP.innerHTML = "Depart Time: " + departTime;
                 reasonP.innerHTML = "Reason For Trip: " + reason;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(clientP);
                 contentDiv.appendChild(weatherP);
                 contentDiv.appendChild(departTimeP);
                 contentDiv.appendChild(reasonP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add respond button to get to deny / accept panel                
                 var resButton = document.createElement("button");
@@ -241,6 +246,8 @@ function PendingPanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
+                var reqTime = new Date(res[i].timeMade);
+                reqTime = reqTime.toLocaleString();
 
                 var userIDNUM = res[i].userId; // TODO - SHOULD BE TEMP
                 var adminIDNUM = res[i].adminId;  // TODO - SHOULD BE TEMP
@@ -261,18 +268,21 @@ function PendingPanel() {
                 var weatherP = document.createElement("p");
                 var departTimeP = document.createElement("p");
                 var reasonP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 clientP.innerHTML = "Request From: " + uID;
                 weatherP.innerHTML = "Weather Conditions: " + weather;
                 departTimeP.innerHTML = "Depart Time: " + departTime;
                 reasonP.innerHTML = "Reason For Trip: " + reason;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(clientP);
                 contentDiv.appendChild(weatherP);
                 contentDiv.appendChild(departTimeP);
                 contentDiv.appendChild(reasonP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add respond button to get to deny / accept panel                
                 var resButton = document.createElement("button");
