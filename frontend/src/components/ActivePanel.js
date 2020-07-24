@@ -90,6 +90,8 @@ function ActivePanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
+                var reqTime = new Date(res[i].timeMade *1000);
+                reqTime = reqTime.toLocaleString([], {hour: '2-digit', minute:'2-digit'});
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
@@ -106,16 +108,19 @@ function ActivePanel() {
                 var currentLocP = document.createElement("p");
                 var departTimeP = document.createElement("p");
                 var reasonP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 currentLocP.innerHTML = "Current Location: " + loc1;
                 departTimeP.innerHTML = "Depart Time: " + departTime;
                 reasonP.innerHTML = "Reason For Trip: " + reason;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(currentLocP);
                 contentDiv.appendChild(departTimeP);
                 contentDiv.appendChild(reasonP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add collButton and contentDiv to TripList
                 document.getElementById("ActTripList").appendChild(collButton);
@@ -208,6 +213,8 @@ function ActivePanel() {
                 var departTime = res[i].startTime;
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
+                var reqTime = new Date(res[i].timeMade *1000);
+                reqTime = reqTime.toLocaleString([], {hour: '2-digit', minute:'2-digit'});
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
@@ -224,16 +231,19 @@ function ActivePanel() {
                 var currentLocP = document.createElement("p");
                 var departTimeP = document.createElement("p");
                 var reasonP = document.createElement("p");
+                var reqTimeP = document.createElement("p");
 
                 // fill <p>s with content from json
                 currentLocP.innerHTML = "Current Location: " + loc1;
                 departTimeP.innerHTML = "Depart Time: " + departTime;
                 reasonP.innerHTML = "Reason For Trip: " + reason;
+                reqTimeP.innerHTML = "Time of Request Creation: " + reqTime;
 
                 // add the <p>s to the content div
                 contentDiv.appendChild(currentLocP);
                 contentDiv.appendChild(departTimeP);
                 contentDiv.appendChild(reasonP);
+                contentDiv.appendChild(reqTimeP);
 
                 // add collButton and contentDiv to TripList
                 document.getElementById("ActTripList").appendChild(collButton);
