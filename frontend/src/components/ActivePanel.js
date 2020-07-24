@@ -91,7 +91,7 @@ function ActivePanel() {
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
                 var reqTime = new Date(res[i].timeMade *1000);
-                reqTime = reqTime.toLocaleString([], {hour: '2-digit', minute:'2-digit'});
+                reqTime = reqTime.toLocaleString();
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
@@ -214,7 +214,7 @@ function ActivePanel() {
                 var reason = res[i].purpose;
                 var weather = res[i].weather;
                 var reqTime = new Date(res[i].timeMade *1000);
-                reqTime = reqTime.toLocaleString([], {hour: '2-digit', minute:'2-digit'});
+                reqTime = reqTime.toLocaleString();
 
                 // make new button for the collapsible component, and give it an ID that corresponds to the ID # of the trip request in the database ("#-coll")
                 var collButton = document.createElement("button");
