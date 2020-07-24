@@ -184,7 +184,7 @@ const listTripsByUser = async(res, userName) =>
 	else
 	{
 		results = await db.find('Trips', {userId: id.ObjectId(userId.Results)});
-		results.Results.sort((a, b) => (a.timeMade > b.timeMade) ? 1 : -1);
+		results.Results.sort((a, b) => (a.timeMade < b.timeMade) ? 1 : -1);
 	}
 
 	db.sendjson(res, results);
@@ -201,6 +201,7 @@ const listTripsByAdmin = async(res, userName) =>
 	else
 	{
 		results = await db.find('Trips', {adminId: id.ObjectId(userId.Results)});
+		results.Results.sort((a, b) => (a.timeMade < b.timeMade) ? 1 : -1);
 		
 	}
 
